@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+
+ string name[7];
+ int i,j;
+ int temp;
+ int grade[7];
+ int index[7];
+
+ for(i=0;i<=6;i++)
+ {
+	cout<<"enter the name:";
+	cin>>name[i];
+	cout<<"enter the grade:";
+	cin>>grade[i];
+ } 
+
+ for(i=0;i<=6;i++)
+ {
+	index[i]=i;
+ } 
+
+ for(i=0;i<=5;i++)
+ {
+    for(j=i+1;j<=6;j++)
+	 {
+         if(name[index[i]] > name[index[j]])
+		{
+			temp=index[i];
+			index[i]=index[j];
+			index[j]=temp;
+
+		}
+	 }
+
+ }
+	 
+  for(i=0;i<=6;i++)
+ {
+	cout<<endl<< name[index[i]] <<endl;
+    cout<< grade[index[i]] <<endl;
+
+ }
+
+  cin.ignore();
+  cin.get();
+
+}
